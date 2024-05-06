@@ -6,17 +6,16 @@ namespace _5by5_Listas
     {
         static void Main(string[] args)
         {
+            Person caue = new("Cauê", "cauematheus_23@hotmail.com", new("14807040", "Araraquara", "SP", "Doutor adhemar", "Avenida", "Melhado", 54, "casa 55"), new());
+            ContactList contactList = new ContactList();
             
-            Person caue = new("Cauê" , "cauematheus_23@hotmail.com", new("14807040" , "Araraquara" , "SP", "Doutor adhemar" , "Avenida", "Melhado", 54 , "casa 55"),new());
-            Person ana = new("Ana" , "Ana@hotmail.com", new("14807040" , "Sergipe" , "SP", "Doutor adhemar" , "Avenida", "Melhado", 54 , "casa 55"),new());
-
-
+            caue.AddPhone(new("1630141041"));
             caue.AddPhone(new("16997552763"));
-            caue.AddPhone(new("12345678910"));
-            ana.AddPhone(new("98745121451"));
-            ana.AddPhone(new("10101010"));
-            caue.PrintPerson();
-            ana.PrintPerson();
+            contactList.Add(caue);
+            contactList.Add(new("Ana" , "Ana@hotmail.com", new("14807040" , "Sergipe" , "SP", "Doutor adhemar" , "Avenida", "Melhado", 54 , "casa 55"),new()));
+
+            
+            contactList.PrintContactList();
             
 
 

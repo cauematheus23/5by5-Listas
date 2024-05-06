@@ -27,7 +27,11 @@ namespace _5by5_Listass
         {
             Console.WriteLine("Name: " + this.completeName + "\nEmail: " + email + "\nAdress" + this.adress.ToString() + "\nPhones: " + phone.PrintPhones());
         }
-        
+
+        public override string? ToString()
+        {
+            return "Name: " + this.completeName + "\nEmail: " + email + "\nAdress" + this.adress.ToString() + "\nPhones: " + phone.PrintPhones();
+        }
 
         public string getName()
         {

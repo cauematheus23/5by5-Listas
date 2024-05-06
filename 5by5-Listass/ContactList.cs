@@ -53,12 +53,12 @@ namespace _5by5_Listass
                         //{
                         //    prev.setNext(contact);
                         //    contact.setNext(aux);
-                            
+
                         //}
                     } while (aux != null && compare > 0);
                     prev.setNext(contact);
                     contact.setNext(aux);
-                    if(aux == null)
+                    if (aux == null)
                     {
                         tail = contact;
                     }
@@ -68,17 +68,17 @@ namespace _5by5_Listass
 
         public void RemoveByName(string name)
         {
-            if(!IsEmpty())
+            if (!IsEmpty())
             {
                 if (name == head.getName())
                 {
-                    if(head == tail)
+                    if (head == tail)
                     {
                         head = tail = null;
                     }
                     else
                     {
-                    head = head.getNext();
+                        head = head.getNext();
                     }
                 }
                 else
@@ -103,16 +103,36 @@ namespace _5by5_Listass
                             }
                         }
 
-                    } while(compare == false && aux != null);
+                    } while (compare == false && aux != null);
 
-                    if(aux == null)
+                    if (aux == null)
                     {
                         Console.WriteLine("Não existe o contato na lista");
                     }
 
-          
+
 
                 }
+            }
+        }
+
+        public void PrintContactList()
+        {
+            Person aux = head;
+            if (IsEmpty())
+            {
+                Console.WriteLine("No one Register");
+            }
+            else
+            {
+                do
+                {
+                    Console.WriteLine(aux.ToString());
+                    Console.WriteLine(aux.PrintPhones());
+                    aux = aux.getNext();
+
+                } while (aux != null);
+
             }
         }
     }

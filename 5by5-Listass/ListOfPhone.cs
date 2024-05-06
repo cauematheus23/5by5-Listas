@@ -36,13 +36,13 @@ namespace _5by5_Listass
 
             }
         }
-        public void RemoveByNumber(string number)
+        public void RemoveByNumber(string number) 
         {
-            if (!IsEmpty())
+            if (!IsEmpty()) 
             {
-                if (number == this.head.getPhone())
+                if(number == this.head.getPhone())
                 {
-                    if (this.head == this.tail)
+                    if(this.head == this.tail)
                     {
                         this.head = this.tail = null;
                     }
@@ -84,16 +84,9 @@ namespace _5by5_Listass
             }
         }
         public string PrintPhones()
-
         {
             Phone aux = head;
-            if (IsEmpty())
-            {
-                return "No one number registered";
-            }
-            else
-            {
-                string result = "";
+            string result = "";
                 do
                 {
                     result += aux.ToString() + "\n";
@@ -101,8 +94,8 @@ namespace _5by5_Listass
 
                 } while (aux != null);
                 return result;
-
-            }
+            
         }
     }
 }
+
