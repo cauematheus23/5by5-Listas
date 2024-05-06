@@ -8,8 +8,8 @@ namespace _5by5_Listass
 {
     internal class ContactList
     {
-        Contact? head;
-        Contact? tail;
+        Person? head;
+        Person? tail;
 
         public ContactList()
         {
@@ -22,7 +22,7 @@ namespace _5by5_Listass
             return head == null && tail == null;
         }
 
-        public void Add(Contact contact)
+        public void Add(Person contact)
         {
             if (IsEmpty())
             {
@@ -33,14 +33,14 @@ namespace _5by5_Listass
                 int compare = string.Compare(contact.getName(), head.getName(), comparisonType: StringComparison.OrdinalIgnoreCase);
                 if (compare <= 0)
                 {
-                    Contact aux = head;
+                    Person aux = head;
                     head = contact;
                     head.setNext(aux);
                 }
                 else
                 {
-                    Contact aux = head;
-                    Contact prev = head;
+                    Person aux = head;
+                    Person prev = head;
                     do
                     {
                         compare = string.Compare(contact.getName(), aux.getName());
@@ -83,8 +83,8 @@ namespace _5by5_Listass
                 }
                 else
                 {
-                    Contact aux = head;
-                    Contact prev = head;
+                    Person aux = head;
+                    Person prev = head;
                     bool compare;
                     do
                     {

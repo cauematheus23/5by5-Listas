@@ -6,13 +6,19 @@ namespace _5by5_Listas
     {
         static void Main(string[] args)
         {
-            List<Contact> list = new();
-            list.Add(new("Guilherme", "123"));
-            foreach (Contact item in list)
-            {
-                Console.WriteLine(item.ToString());
-            }
             
+            Person caue = new("Cauê" , "cauematheus_23@hotmail.com", new("14807040" , "Araraquara" , "SP", "Doutor adhemar" , "Avenida", "Melhado", 54 , "casa 55"),new());
+            Person ana = new("Ana" , "Ana@hotmail.com", new("14807040" , "Sergipe" , "SP", "Doutor adhemar" , "Avenida", "Melhado", 54 , "casa 55"),new());
+
+
+            caue.AddPhone(new("16997552763"));
+            caue.AddPhone(new("12345678910"));
+            ana.AddPhone(new("98745121451"));
+            ana.AddPhone(new("10101010"));
+            caue.PrintPerson();
+            ana.PrintPerson();
+            
+
 
 
 
