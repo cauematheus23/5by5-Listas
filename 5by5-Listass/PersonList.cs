@@ -136,6 +136,11 @@ namespace _5by5_Listass
             }
         }
 
+        public void AddPhoneByName(string name)
+        {
+            Person aux = head;
+            
+        }
         public string GetName(Person person)
         {
             return person.GetName();
