@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace _5by5_Listass
 {
-    internal class ContactList
+    internal class PersonList
     {
         Person? head;
         Person? tail;
 
-        public ContactList()
+        public PersonList()
         {
             this.head = null;
             this.tail = null;
@@ -30,12 +30,12 @@ namespace _5by5_Listass
             }
             else
             {
-                int compare = string.Compare(contact.getName(), head.getName(), comparisonType: StringComparison.OrdinalIgnoreCase);
+                int compare = string.Compare(contact.GetName(), head.GetName(), comparisonType: StringComparison.OrdinalIgnoreCase);
                 if (compare <= 0)
                 {
                     Person aux = head;
                     head = contact;
-                    head.setNext(aux);
+                    head.SetNext(aux);
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace _5by5_Listass
                     Person prev = head;
                     do
                     {
-                        compare = string.Compare(contact.getName(), aux.getName());
+                        compare = string.Compare(contact.GetName(), aux.GetName());
                         if (compare > 0)
                         {
                             prev = aux;
@@ -51,13 +51,13 @@ namespace _5by5_Listass
                         }
                         //else
                         //{
-                        //    prev.setNext(contact);
-                        //    contact.setNext(aux);
+                        //    prev.SetNext(contact);
+                        //    contact.SetNext(aux);
 
                         //}
                     } while (aux != null && compare > 0);
-                    prev.setNext(contact);
-                    contact.setNext(aux);
+                    prev.SetNext(contact);
+                    contact.SetNext(aux);
                     if (aux == null)
                     {
                         tail = contact;
@@ -70,7 +70,7 @@ namespace _5by5_Listass
         {
             if (!IsEmpty())
             {
-                if (name == head.getName())
+                if (name == head.GetName())
                 {
                     if (head == tail)
                     {
@@ -88,7 +88,7 @@ namespace _5by5_Listass
                     bool compare;
                     do
                     {
-                        compare = name.Equals(aux.getName());
+                        compare = name.Equals(aux.GetName());
                         if (!compare)
                         {
                             prev = aux;
@@ -96,7 +96,7 @@ namespace _5by5_Listass
                         }
                         else
                         {
-                            prev.setNext(aux.getNext());
+                            prev.SetNext(aux.getNext());
                             if (prev.getNext() == null)
                             {
                                 tail = prev;
@@ -128,12 +128,17 @@ namespace _5by5_Listass
                 do
                 {
                     Console.WriteLine(aux.ToString());
-                    Console.WriteLine(aux.PrintPhones());
+                    //Console.WriteLine(aux.PrintPhones());
                     aux = aux.getNext();
 
                 } while (aux != null);
 
             }
+        }
+
+        public string GetName(Person person)
+        {
+            return person.GetName();
         }
     }
 }

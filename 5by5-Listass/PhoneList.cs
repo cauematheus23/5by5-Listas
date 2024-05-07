@@ -8,12 +8,12 @@ using System.Xml.Linq;
 
 namespace _5by5_Listass
 {
-    internal class ListOfPhone
+    internal class PhoneList
     {
         Phone head;
         Phone tail;
 
-        public ListOfPhone()
+        public PhoneList()
         {
             this.head = null;
             this.tail = null;
@@ -40,7 +40,7 @@ namespace _5by5_Listass
         {
             if (!IsEmpty()) 
             {
-                if(number == this.head.getPhone())
+                if(number == this.head.GetPhoneNumber())
                 {
                     if(this.head == this.tail)
                     {
@@ -59,7 +59,7 @@ namespace _5by5_Listass
                     bool compare;
                     do
                     {
-                        compare = number.Equals(current.getPhone());
+                        compare = number.Equals(current.GetPhoneNumber());
                         if (!compare)
                         {
                             prev = current;
@@ -83,19 +83,20 @@ namespace _5by5_Listass
                 }
             }
         }
-        public string PrintPhones()
-        {
-            Phone aux = head;
-            string result = "";
-                do
-                {
-                    result += aux.ToString() + "\n";
-                    aux = aux.getNext();
 
-                } while (aux != null);
-                return result;
-            
+        public override string? ToString()
+        {
+            Phone current = this.head;
+            string phones = "";
+            while(current != null)
+            {
+                phones += "\n" + current;
+                current = current.getNext();
+
+            }
+            return phones;
         }
     }
 }
+
 

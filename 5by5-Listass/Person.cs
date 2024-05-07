@@ -6,44 +6,40 @@ using System.Threading.Tasks;
 
 namespace _5by5_Listass
 {
-    internal class Person : ListOfPhone
+    internal class Person
     {
-        string completeName;
-        ListOfPhone phone;
+        string name;
+        PhoneList phones;
         Adress adress;
         Person next;
         string email;
 
-        public Person(string name,string email, Adress adress,ListOfPhone listPhones)
+       
+        public Person(string name,string email, Adress adress)
         {
-            this.completeName = name;
+            this.name = name;
             this.adress = adress;
             this.email = email;
-            phone = listPhones;
+            this.phones = new PhoneList();
+           
+            ;
         }
-
-
-        public void PrintPerson()
+              
+         
+        public string GetName(){return this.name;}
+        public void SetNext(Person c){ this.next = c;}
+        public PhoneList GetPhone() { return this.phones;}
+        public void AddPhone(Phone phone)
         {
-            Console.WriteLine("Name: " + this.completeName + "\nEmail: " + email + "\nAdress" + this.adress.ToString() + "\nPhones: " + phone.PrintPhones());
-        }
-
-        public override string? ToString()
-        {
-            return "Name: " + this.completeName + "\nEmail: " + email + "\nAdress" + this.adress.ToString() + "\nPhones: " + phone.PrintPhones();
-        }
-
-        public string getName()
-        {
-            return this.completeName;
-        }
-        public void setNext(Person c)
-        {
-            this.next = c;
+            phones.AddPhone(phone);
         }
         public Person getNext()
         {
             return this.next;
+        }
+        public override string? ToString()
+        {
+            return "Name: " + this.name + "\nEmail: " + email + "\nPhones:\n " + phones.ToString();
         }
     }
 }

@@ -8,31 +8,18 @@ namespace _5by5_Listass
 {
     internal class Phone
     {
-        string phone;
+        string phoneNumber;
         Phone next;
 
-        public Phone(string phone)
+        public Phone(string phoneNumber)
         {
-            this.phone = phone;
+            this.phoneNumber = phoneNumber;
             this.next = null;
         }
 
-        public override string? ToString()
-        {
-            return " " + phone;
-        }
-
-        public Phone getNext()
-        {
-            return this.next;
-        }
-        public void setNext(Phone next)
-        {
-            this.next = next;
-        }
-        public string getPhone()
-        {
-            return this.phone;
-        }
+        public override string? ToString(){return "\n " + this.phoneNumber;}
+        public Phone getNext(){return this.next;}
+        public void setNext(Phone next){this.next = next;}
+        public string GetPhoneNumber(){return this.phoneNumber;}
     }
 }
