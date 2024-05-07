@@ -6,7 +6,7 @@ namespace _5by5_Listas
     internal class Program
     {
 
-
+        List<Person> persons = new();
         static void Menu()
         {
             Console.WriteLine("[1] - Print Phone Book ");

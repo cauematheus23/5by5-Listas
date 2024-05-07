@@ -138,7 +138,23 @@ namespace _5by5_Listass
 
         public void AddPhoneByName(string name)
         {
-            Person aux = head;
+            
+            if (IsEmpty())
+            {
+                Console.WriteLine("Contact list empty!");
+            }
+            else
+            {
+                Person aux = head;
+                Person prev = null;
+                bool compare;
+                do
+                {
+                    compare = string.Compare(aux.GetName(), name, comparisonType:StringComparison.OrdinalIgnoreCase));
+
+                } while (compare == false && aux != null);
+
+            }
             
         }
         public string GetName(Person person)

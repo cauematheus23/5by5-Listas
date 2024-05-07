@@ -9,9 +9,9 @@ namespace _5by5_Listass
     internal class Person
     {
         string name;
-        PhoneList phones;
+        List<Phone> phones;
         Adress adress;
-        Person next;
+        //Person next;
         string email;
 
        
@@ -20,23 +20,17 @@ namespace _5by5_Listass
             this.name = name;
             this.adress = adress;
             this.email = email;
-            this.phones = new PhoneList();
+            this.phones = new List<Phone>();
            
             ;
         }
               
          
         public string GetName(){return this.name;}
-        public void SetNext(Person c){ this.next = c;}
-        public PhoneList GetPhone() { return this.phones;}
-        public void AddPhone(Phone phone)
-        {
-            phones.AddPhone(phone);
-        }
-        public Person getNext()
-        {
-            return this.next;
-        }
+        //public void SetNext(Person c){ this.next = c;}
+        public List<Phone> GetPhone() { return this.phones;}
+        public void AddPhone(Phone phone){phones.Add(phone);}
+        //public Person getNext(){return this.next;}
         public override string? ToString()
         {
             return "Name: " + this.name + "\nEmail: " + email + "\nPhones:\n " + phones.ToString();
