@@ -8,6 +8,8 @@ namespace _5by5_Listass
 {
     internal class Person
     {
+
+
         string name;
         List<Phone> phones;
         Adress adress;
@@ -15,10 +17,10 @@ namespace _5by5_Listass
         string email;
 
        
-        public Person(string name,string email, Adress adress)
+        public Person(string name ,string email /*Adress adress*/)
         {
             this.name = name;
-            this.adress = adress;
+            //this.adress = adress;
             this.email = email;
             this.phones = new List<Phone>();
            
@@ -31,9 +33,15 @@ namespace _5by5_Listass
         public List<Phone> GetPhone() { return this.phones;}
         public void AddPhone(Phone phone){phones.Add(phone);}
         //public Person getNext(){return this.next;}
+       
         public override string? ToString()
         {
-            return "Name: " + this.name + "\nEmail: " + email + "\nPhones:\n " + phones.ToString();
+            string phonesInfo = "";
+            foreach(Phone phone in this.phones)
+            {
+                phonesInfo += phone + "\n";
+            }
+            return "Name: " + this.name + "\nEmail: " + email + "\nPhones\n" + phonesInfo;
         }
     }
 }

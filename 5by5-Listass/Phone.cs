@@ -17,7 +17,7 @@ namespace _5by5_Listass
             this.next = null;
         }
 
-        public override string? ToString(){return "\n " + this.phoneNumber;}
+        public override string? ToString(){return this.phoneNumber;}
         public Phone getNext(){return this.next;}
         public void setNext(Phone next){this.next = next;}
         public string GetPhoneNumber(){return this.phoneNumber;}
